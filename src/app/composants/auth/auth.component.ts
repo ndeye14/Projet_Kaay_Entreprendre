@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
+import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { HeaderConnecteComponent } from '../header-connecte/header-connecte.component';
 
 @Component({
@@ -9,25 +11,59 @@ import { HeaderConnecteComponent } from '../header-connecte/header-connecte.comp
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-  // On fait appel au constructeur
-  constructor(private route: Router) { }
-
-
-   isUserConnected: boolean = false;
+  users!: any[];
+  email!: string;
+  password!: string;
+  isUserConnected: boolean = false;
 
 
  // Méthode pour simuler la connexion/déconnexion
   // toggleUserConnection() {
   //   this.isUserConnected = !this.isUserConnected;
   // }
+  // On fait appel au constructeur
+   constructor(private user: AuthService, private route: Router) {}
+  ngOnInit(): void {
+    this.user.getUsers().subscribe(users => {
+      this.users = users;
+      console.log(users);
+    });
+  }
+   // Méthode pour afficher un sweetalert2 apres vérification
+  verifierChamps(title: any, text: any, icon: any) {
+    Swal.fire({
+      title: title,
+      text: text,
+      icon: icon
+    });
+  }
+
+
+
+
 
 
   loginUser() {
+   const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/;
+    // Premiere vérification avec sweetalert
+    if (this.email == "" ||  this.password == "" ) {
+      this.verifierChamps("Erreur!", "Vueillez renseigner les champs", "error");
+    }
 
-// Logique de connexion
+    else if (!this.email.match(emailPattern)) {
+      // Vérifie si le format de l'email est correct
+      this.verifierChamps("Erreur!", "Email invalide", "error");
+    }
+    else {
+      const autth = this.users.find(ele => ele.email == this.email && ele.password == this.password)
+      if (autth) {
+        this.route.navigate(['home']);
+        console.log(autth);
 
-    // Redirection après connexion réussie
-
+      } else {
+        console.log(('pas bon ca'));
+      }
+    }
 
     this.route.navigate(['home']);
   }
@@ -41,6 +77,11 @@ afficherFrmConnexion(){
   // ou la deuxiÃ¨me aprÃ¨s les : si la condition est fausse
   // this.showFrmConnexion == false ?  this.titleFrm="Connectez-Vous" :  this.titleFrm="Inscrivez-Vous";
 }
+
+  // Methode ajout contact
+  userConnect() {
+
+  }
 
 
 }
