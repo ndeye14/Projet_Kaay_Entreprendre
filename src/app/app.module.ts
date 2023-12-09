@@ -13,6 +13,11 @@ import { PageaccueilComponent } from './composants/pageaccueil/pageaccueil.compo
 import { AproposComponent } from './composants/apropos/apropos.component';
 import { ProjetsComponent } from './composants/projets/projets.component';
 
+import { ForumComponent } from './composants/forum/forum.component';
+
+import { MenuComponent } from './composants/menu/menu.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +27,17 @@ import { ProjetsComponent } from './composants/projets/projets.component';
     FooterComponent,
     PolitiquesConfidentialitesComponent,
     ConditionsGeneralesComponent,
+
     PageaccueilComponent,
     AproposComponent,
     ProjetsComponent,
+
+
+    ForumComponent,
+
+    MenuComponent
+
+
   ],
   imports: [
     BrowserModule,

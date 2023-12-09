@@ -7,15 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-   private apiUrl = 'http://localhost:3000';
+
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/users`);
-  }
-
-  getUserById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/users/${id}`);
-  }
+  
 }
