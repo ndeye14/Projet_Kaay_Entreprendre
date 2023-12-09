@@ -35,8 +35,17 @@ footer {
   height: 220px;
 }
 
-.text-muted li a,.text-custom{
+.text-muted li a{
   color: #ff9700;
+  margin-left: 40px;
+
+}
+.text-custom{
+  text-decoration: underline;
+  color: #ff9700;
+  margin-left: 20px;
+
+
 }
 .lien{
   padding-top: 30px;
@@ -62,4 +71,17 @@ i {
   background: #19375C;
   color: #ff9700;
   width: 90%;
+}
+
+#trait {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+#line {
+  width: 50%;
+  border: 1px solid #ff9700;
+  margin-top: 20px;
 }
