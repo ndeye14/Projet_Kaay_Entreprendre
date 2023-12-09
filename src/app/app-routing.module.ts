@@ -6,6 +6,12 @@ import { ConditionsGeneralesComponent } from './composants/conditions-generales/
 import { PolitiquesConfidentialitesComponent } from './composants/politiques-confidentialites/politiques-confidentialites.component';
 // import { HeaderConnecteComponent } from './composants/header-connecte/header-connecte.component';
 import { HeaderConnecteComponent } from './composants/header-connecte/header-connecte.component';
+import { DomainesComponent } from './composants/domaines/domaines.component';
+import { DashComponent } from './composants/dash/dash.component';
+import { GuidesComponent } from './composants/guides/guides.component';
+import { MenuComponent } from './composants/menu/menu.component';
+import { SettingProfilComponent } from './composants/setting-profil/setting-profil.component';
+import { ProfilComponent } from './composants/profil/profil.component';
 
 const routes: Routes = [
    {path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +20,12 @@ const routes: Routes = [
    { path: 'accueil', component: HeaderConnecteComponent },
   { path: 'politiqueConfidenialite', component: PolitiquesConfidentialitesComponent },
   { path: 'conditionUtilisation', component: ConditionsGeneralesComponent },
+  { path: 'dash', component : DashComponent},
+  { path: 'guides', component: GuidesComponent},
+  { path: 'domaines', component: DomainesComponent },
+  { path: 'profil', component: ProfilComponent},
+  { path: 'setting',component:SettingProfilComponent},
+  { path: 'menu',component:MenuComponent}
 
 
 ];
