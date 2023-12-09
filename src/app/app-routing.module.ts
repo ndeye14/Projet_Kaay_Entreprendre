@@ -6,14 +6,20 @@ import { ConditionsGeneralesComponent } from './composants/conditions-generales/
 import { PolitiquesConfidentialitesComponent } from './composants/politiques-confidentialites/politiques-confidentialites.component';
 // import { HeaderConnecteComponent } from './composants/header-connecte/header-connecte.component';
 import { HeaderConnecteComponent } from './composants/header-connecte/header-connecte.component';
+import { PageaccueilComponent } from './composants/pageaccueil/pageaccueil.component';
+import { AproposComponent } from './composants/apropos/apropos.component';
+import { ProjetsComponent } from './composants/projets/projets.component';
 
 const routes: Routes = [
    {path: '', redirectTo: '/home', pathMatch: 'full' },
-   { path: 'home', component: HeaderComponent },
    { path: 'login', component: AuthComponent },
+   { path: 'home', component: HeaderComponent },
    { path: 'accueil', component: HeaderConnecteComponent },
   { path: 'politiqueConfidenialite', component: PolitiquesConfidentialitesComponent },
   { path: 'conditionUtilisation', component: ConditionsGeneralesComponent },
+  { path: 'pageacceuil', component: PageaccueilComponent },
+  { path: 'apropos', component: AproposComponent },
+  { path:'projets', component: ProjetsComponent }
 
 
 ];

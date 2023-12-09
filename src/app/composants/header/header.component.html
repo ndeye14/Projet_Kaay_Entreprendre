@@ -39,16 +39,24 @@
           </svg>
         </label>
         <ul class="links">
-          <li routerLinkActive="active"><a href="#">Accueil</a></li>
-          <li routerLinkActive="active"><a href="#">Projets</a></li>
+          <li routerLinkActive="active"><a routerLink="/pageacceuil" >Accueil</a></li>
+          <li routerLinkActive="active"><a routerLink="/projets" >Projets</a></li>
           <li routerLinkActive="active"><a href="#">Forum</a></li>
-          <li routerLinkActive="active"><a href="#">A propos</a></li>
+          <li routerLinkActive="active"><a routerLink="/apropos">A propos</a></li>
           <li routerLinkActive="active"><a href="#">Soumettre un projet</a></li>
         </ul>
         <div>
           <!-- (click)="toggleUserConnection()" {{ isUserConnected ? 'Déconnexion' : 'Connexion' }}-->
 
-          <button class="btn btn-custom"  routerLink="/login">connexion</button>
+          <div *ngIf="!user">
+            <button class="btn btn-custom" routerLink="/login">connexion</button>
+          </div>
+
+          <div class="buttons" *ngIf="user">
+            <button class="btn btn-custom" >Deconnecter</button>
+            <!-- <a href="#" class="signin">Connecter</a> -->
+
+          </div>
           <!-- <a href="#" > <img src="assets/logo.png" alt="" class="round"></a> -->
 
         </div>
