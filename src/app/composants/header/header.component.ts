@@ -10,11 +10,10 @@ export class HeaderComponent implements OnInit {
 
    constructor() { }
 
- 
-
-
-
+   user : any;
 
   ngOnInit(): void {}
+
+  
 
 }

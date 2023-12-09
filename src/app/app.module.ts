@@ -9,6 +9,9 @@ import { AuthComponent } from './composants/auth/auth.component';
 import { FooterComponent } from './composants/footer/footer.component';
 import { PolitiquesConfidentialitesComponent } from './composants/politiques-confidentialites/politiques-confidentialites.component';
 import { ConditionsGeneralesComponent } from './composants/conditions-generales/conditions-generales.component';
+import { PageaccueilComponent } from './composants/pageaccueil/pageaccueil.component';
+import { AproposComponent } from './composants/apropos/apropos.component';
+import { ProjetsComponent } from './composants/projets/projets.component';
 
 import { ForumComponent } from './composants/forum/forum.component';
 
@@ -25,9 +28,15 @@ import { MenuComponent } from './composants/menu/menu.component';
     PolitiquesConfidentialitesComponent,
     ConditionsGeneralesComponent,
 
+    PageaccueilComponent,
+    AproposComponent,
+    ProjetsComponent,
+
+
     ForumComponent,
 
     MenuComponent
+
 
   ],
   imports: [
