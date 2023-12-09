@@ -16,18 +16,13 @@ export class AuthComponent {
   password!: string;
   isUserConnected: boolean = false;
 
+  titleFrm:string="Inscrivez-vous";
 
- // Méthode pour simuler la connexion/déconnexion
-  // toggleUserConnection() {
-  //   this.isUserConnected = !this.isUserConnected;
-  // }
+
   // On fait appel au constructeur
-   constructor(private user: AuthService, private route: Router) {}
+   constructor( private route: Router) {}
   ngOnInit(): void {
-    this.user.getUsers().subscribe(users => {
-      this.users = users;
-      console.log(users);
-    });
+
   }
    // Méthode pour afficher un sweetalert2 apres vérification
   verifierChamps(title: any, text: any, icon: any) {
@@ -44,28 +39,28 @@ export class AuthComponent {
 
 
   loginUser() {
-   const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/;
-    // Premiere vérification avec sweetalert
-    if (this.email == "" ||  this.password == "" ) {
-      this.verifierChamps("Erreur!", "Vueillez renseigner les champs", "error");
-    }
+  //  const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/;
+  //   // Premiere vérification avec sweetalert
+  //   if (this.email == "" ||  this.password == "" ) {
+  //     this.verifierChamps("Erreur!", "Vueillez renseigner les champs", "error");
+  //   }
 
-    else if (!this.email.match(emailPattern)) {
-      // Vérifie si le format de l'email est correct
-      this.verifierChamps("Erreur!", "Email invalide", "error");
-    }
-    else {
-      const autth = this.users.find(ele => ele.email == this.email && ele.password == this.password)
-      if (autth) {
-        this.route.navigate(['home']);
-        console.log(autth);
+  //   else if (!this.email.match(emailPattern)) {
+  //     // Vérifie si le format de l'email est correct
+  //     this.verifierChamps("Erreur!", "Email invalide", "error");
+  //   }
+  //   else {
+  //     const autth = this.users.find(ele => ele.email == this.email && ele.password ==  this.password)
+  //     if (autth) {
+  //       this.route.navigate(['home']);
+  //       console.log(autth);
 
-      } else {
-        console.log(('pas bon ca'));
-      }
-    }
+  //     } else {
+  //       console.log(('pas bon ca'));
+  //     }
+    //   }
 
-    this.route.navigate(['home']);
+    this.route.navigate(['accueil']);
   }
   // choix formulaire
 showFrmConnexion: boolean=true;
@@ -75,13 +70,9 @@ afficherFrmConnexion(){
 
   // OpÃ©ration ternaire qui prend la premiere valeur aprÃ¨s le ? si la condition est vrai
   // ou la deuxiÃ¨me aprÃ¨s les : si la condition est fausse
-  // this.showFrmConnexion == false ?  this.titleFrm="Connectez-Vous" :  this.titleFrm="Inscrivez-Vous";
+   this.showFrmConnexion == false ?  this.titleFrm="Connectez-Vous" :  this.titleFrm="Inscrivez-Vous";
 }
 
-  // Methode ajout contact
-  userConnect() {
-
-  }
 
 
 }
