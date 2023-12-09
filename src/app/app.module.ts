@@ -9,6 +9,7 @@ import { AuthComponent } from './composants/auth/auth.component';
 import { FooterComponent } from './composants/footer/footer.component';
 import { PolitiquesConfidentialitesComponent } from './composants/politiques-confidentialites/politiques-confidentialites.component';
 import { ConditionsGeneralesComponent } from './composants/conditions-generales/conditions-generales.component';
+import { MenuComponent } from './composants/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ConditionsGeneralesComponent } from './composants/conditions-generales/
     FooterComponent,
     PolitiquesConfidentialitesComponent,
     ConditionsGeneralesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
